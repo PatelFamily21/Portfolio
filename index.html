@@ -1,0 +1,712 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patel Hadaisa | IT Professional</title>
+    <meta name="description" content="Portfolio of Patel Hadaisa, Information Technology graduate specializing in web development and database administration">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#2ECC40", // GitHub Green
+                        secondary: "#0074D9", // GitHub Blue
+                        dark: "#0D1117", // GitHub Dark Background
+                        light: "#C9D1D9", // GitHub Light Text
+                        muted: "#8B949E", // GitHub Muted Text
+                        border: "#21262D", // GitHub Border
+                        'card-bg': "#161B22" // GitHub Card Background
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0D1117; /* bg-dark */
+        }
+        .gradient-bg {
+            background: linear-gradient(135deg, #2ECC40 0%, #0074D9 100%);
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3);
+        }
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+        .animate-float {
+            animation: float 3s ease-in-out infinite;
+        }
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .fade-in-up {
+            animation: fadeInUp 0.6s ease-out forwards;
+        }
+        .profile-image:hover {
+            transform: scale(1.05);
+            transition: transform 0.3s ease;
+        }
+    </style>
+</head>
+<body>
+    <div class="fixed top-0 left-0 h-1 bg-primary z-50" id="scrollProgress"></div>
+
+    <button id="backToTop" 
+            class="fixed bottom-8 right-8 bg-primary text-light p-3 rounded-full shadow-lg opacity-0 transition-opacity duration-300 hover:bg-primary/90">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Navigation -->
+    <nav class="bg-card-bg backdrop-blur-sm border-b border-border sticky top-0 z-50">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">
+                <a href="#" class="text-2xl font-bold text-light">PH</a>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#about" class="text-muted hover:text-primary transition duration-300">About</a>
+                    <a href="#skills" class="text-muted hover:text-primary transition duration-300">Skills</a>
+                    <a href="#projects" class="text-muted hover:text-primary transition duration-300">Projects</a>
+                    <a href="#experience" class="text-muted hover:text-primary transition duration-300">Experience</a>
+                    <a href="#contact" class="text-muted hover:text-primary transition duration-300">Contact</a>
+                </div>
+                <button class="md:hidden text-muted focus:outline-none">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div id="mobileMenu" class="fixed inset-0 bg-card-bg/80 backdrop-blur-sm z-50 transform translate-x-full transition-transform duration-300 md:hidden">
+        <div class="flex flex-col h-full">
+            <div class="flex justify-end p-6">
+                <button id="closeMenu" class="text-light hover:text-primary">
+                    <i class="fas fa-times text-2xl"></i>
+                </button>
+            </div>
+            <div class="flex flex-col items-center space-y-8 mt-16">
+                <a href="#about" class="text-light text-xl hover:text-primary transition duration-300">About</a>
+                <a href="#skills" class="text-light text-xl hover:text-primary transition duration-300">Skills</a>
+                <a href="#projects" class="text-light text-xl hover:text-primary transition duration-300">Projects</a>
+                <a href="#experience" class="text-light text-xl hover:text-primary transition duration-300">Experience</a>
+                <a href="#contact" class="text-light text-xl hover:text-primary transition duration-300">Contact</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <header class="min-h-screen flex items-center relative overflow-hidden bg-dark">
+        <div class="absolute inset-0 overflow-hidden">
+            <div class="absolute top-0 left-0 w-full h-full">
+                <div class="absolute top-20 left-20 w-64 h-64 rounded-full bg-primary/20 blur-3xl"></div>
+                <div class="absolute bottom-20 right-20 w-96 h-96 rounded-full bg-secondary/20 blur-3xl"></div>
+                <div class="absolute top-1/3 right-1/4 w-80 h-80 rounded-full bg-blue-400/10 blur-3xl"></div>
+            </div>
+        </div>
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="flex flex-col lg:flex-row items-center gap-12">
+                <div class="lg:w-1/2 text-light space-y-8 fade-in-up">
+                    <div class="inline-block text-sm font-semibold bg-primary/20 text-primary rounded-full px-4 py-2 mb-2">
+                        Information Technology Professional
+                    </div>
+                    <h1 class="text-5xl md:text-7xl font-bold tracking-tight">
+                        <span class="block">Patel</span>
+                        <span class="block text-primary">Hadaisa</span>
+                    </h1>
+                    <p class="text-lg md:text-xl text-muted max-w-lg">
+                        Software Developer with proficiency in Python, Django, and database administration, creating practical solutions for real-world challenges.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <a href="#contact" class="group bg-primary hover:bg-primary/90 text-light px-8 py-4 rounded-lg font-medium transition-all duration-300 flex items-center justify-center">
+                            <span>Let's Talk</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2 transition-transform duration-300 group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                            </svg>
+                        </a>
+                        <a href="#projects" class="group border border-border hover:border-secondary text-muted hover:text-light px-8 py-4 rounded-lg font-medium transition-all duration-300 flex items-center justify-center">
+                            <span>View Projects</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                            </svg>
+                        </a>
+                    </div>
+                    <div class="pt-4">
+                        <div class="flex items-center gap-8">
+                            <a href="https://github.com/PatelFamily21" class="text-muted hover:text-light transition-colors duration-300">
+                                <i class="fab fa-github text-xl"></i>
+                            </a>
+                            <a href="https://www.linkedin.com/in/patel-hadaisa-b56510216/" class="text-muted hover:text-light transition-colors duration-300">
+                                <i class="fab fa-linkedin-in text-xl"></i>
+                            </a>
+                            <a href="https://web.facebook.com/seniorpatels/" class="text-muted hover:text-light transition-colors duration-300">
+                                <i class="fab fa-facebook text-xl"></i>
+                            </a>
+                            
+                        </div>
+                    </div>
+                </div>
+                <div class="lg:w-1/2 relative">
+                    <div class="relative">
+                        <div class="absolute -top-16 -left-16 w-32 h-32 bg-gradient-to-r from-primary to-secondary rounded-full opacity-30 blur-xl"></div>
+                        <div class="absolute -bottom-8 -right-8 w-24 h-24 bg-gradient-to-r from-secondary to-purple-500 rounded-full opacity-30 blur-xl"></div>
+                        <div class="relative z-10 bg-card-bg backdrop-blur-sm border border-border rounded-2xl p-8 shadow-2xl">
+                            <div class="mb-8 flex justify-center">
+                                <div class="relative">
+                                    <div class="absolute inset-0 bg-gradient-to-r from-primary to-secondary rounded-full blur-lg opacity-70 animate-pulse"></div>
+                                    <img src="assets/Patel.jpg" alt="Patel Hadaisa" class="relative z-10 w-40 h-40 rounded-full object-cover border-4 border-dark profile-image">
+                                </div>
+                            </div>
+                            <div class="grid grid-cols-3 gap-4 mb-6">
+                                <div class="text-center">
+                                    <p class="text-3xl font-bold text-light">3+</p>
+                                    <p class="text-muted text-sm">Projects</p>
+                                </div>
+                                <div class="text-center border-x border-border">
+                                    <p class="text-3xl font-bold text-light">1+</p>
+                                    <p class="text-muted text-sm">Years Exp</p>
+                                </div>
+                                <div class="text-center">
+                                    <p class="text-3xl font-bold text-light">6+</p>
+                                    <p class="text-muted text-sm">Tech Skills</p>
+                                </div>
+                            </div>
+                            <div>
+                                <p class="text-muted text-center mb-4 text-sm uppercase tracking-wider">Tech Stack</p>
+                                <div class="flex flex-wrap justify-center gap-4">
+                                    <div class="bg-dark w-10 h-10 rounded-lg flex items-center justify-center text-primary" title="Python">
+                                        <i class="fab fa-python"></i>
+                                    </div>
+                                    <div class="bg-dark w-10 h-10 rounded-lg flex items-center justify-center text-primary" title="Django">
+                                        <i class="fab fa-python"></i>
+                                    </div>
+                                    <div class="bg-dark w-10 h-10 rounded-lg flex items-center justify-center text-secondary" title="React">
+                                        <i class="fab fa-react"></i>
+                                    </div>
+                                    <div class="bg-dark w-10 h-10 rounded-lg flex items-center justify-center text-secondary" title="CSS">
+                                        <i class="fab fa-css3-alt"></i>
+                                    </div>
+                                    <div class="bg-dark w-10 h-10 rounded-lg flex items-center justify-center text-orange-400" title="Database">
+                                        <i class="fas fa-database"></i>
+                                    </div>
+                                    <div class="bg-dark w-10 h-10 rounded-lg flex items-center justify-center text-green-400" title="Node.js">
+                                        <i class="fab fa-node-js"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 flex flex-col items-center text-muted">
+            <span class="text-sm mb-2">Scroll Down</span>
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 animate-bounce" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+            </svg>
+        </div>
+    </header>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-dark">
+        <div class="absolute inset-0">
+            <div class="absolute top-10 left-10 w-64 h-64 rounded-full bg-primary/20 blur-3xl"></div>
+            <div class="absolute bottom-10 right-10 w-80 h-80 rounded-full bg-secondary/20 blur-3xl"></div>
+        </div>
+        <div class="container mx-auto px-6 relative z-10">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-16 text-light">About Me</h2>
+            <div class="max-w-5xl mx-auto">
+                <div class="grid md:grid-cols-2 gap-12 items-center">
+                    <div class="bg-card-bg backdrop-blur-sm border border-border rounded-2xl p-8 card fade-in-up">
+                        <p class="text-muted mb-6 leading-relaxed">
+                            I'm a passionate Information Technology professional graduating with a <span class="font-medium text-light">Bachelor of Science in Information Technology</span> from Maseno University, Kisumu, Kenya in six months.
+                        </p>
+                        <p class="text-muted mb-6 leading-relaxed">
+                            With expertise in <span class="font-medium text-light">Python, Django, React.js, and database administration</span>, I specialize in building robust web applications and solutions that solve real-world problems.
+                        </p>
+                        <p class="text-muted leading-relaxed">
+                            My experience includes software development, database management, computer networking, and endpoint security, along with practical skills in project management and version control.
+                        </p>
+                    </div>
+                    <div class="bg-card-bg backdrop-blur-sm border border-border rounded-2xl p-8 card fade-in-up">
+                        <h3 class="text-xl font-semibold mb-6 text-light border-b border-border pb-2">Education</h3>
+                        <div class="space-y-6">
+                            <div class="flex items-start">
+                                <div class="bg-primary/20 p-3 rounded-full mr-4">
+                                    <i class="fas fa-graduation-cap text-primary text-lg"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-medium text-light">Bachelor of Science in Information Technology</h4>
+                                    <p class="text-muted">Maseno University, Kisumu, Kenya</p>
+                                    <p class="text-sm text-muted mt-1">Expected Graduation: November 2025</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-20 bg-dark">
+        <div class="absolute inset-0">
+            <div class="absolute top-20 right-20 w-72 h-72 rounded-full bg-primary/20 blur-3xl"></div>
+            <div class="absolute bottom-20 left-20 w-96 h-96 rounded-full bg-secondary/20 blur-3xl"></div>
+        </div>
+        <div class="container mx-auto px-6 relative z-10">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-16 text-light">Technical Skills</h2>
+            <div class="max-w-5xl mx-auto">
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div class="bg-card-bg backdrop-blur-sm border border-border rounded-2xl p-6 card fade-in-up">
+                        <div class="flex items-center mb-4">
+                            <div class="bg-primary/20 p-2 rounded-lg mr-4">
+                                <i class="fas fa-code text-primary text-xl"></i>
+                            </div>
+                            <h3 class="text-xl font-semibold text-light">Programming</h3>
+                        </div>
+                        <ul class="space-y-3">
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-primary mr-3"></i>
+                                <span class="text-muted">Python (Intermediate)</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="bg-card-bg backdrop-blur-sm border border-border rounded-2xl p-6 card fade-in-up">
+                        <div class="flex items-center mb-4">
+                            <div class="bg-primary/20 p-2 rounded-lg mr-4">
+                                <i class="fas fa-laptop-code text-primary text-xl"></i>
+                            </div>
+                            <h3 class="text-xl font-semibold text-light">Web Development</h3>
+                        </div>
+                        <ul class="space-y-3">
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-primary mr-3"></i>
+                                <span class="text-muted">Django Framework</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-primary mr-3"></i>
+                                <span class="text-muted">React.js</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-primary mr-3"></i>
+                                <span class="text-muted">Tailwind CSS</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-primary mr-3"></i>
+                                <span class="text-muted">Bootstrap</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-primary mr-3"></i>
+                                <span class="text-muted">APIs</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="bg-card-bg backdrop-blur-sm border border-border rounded-2xl p-6 card fade-in-up">
+                        <div class="flex items-center mb-4">
+                            <div class="bg-primary/20 p-2 rounded-lg mr-4">
+                                <i class="fas fa-database text-primary text-xl"></i>
+                            </div>
+                            <h3 class="text-xl font-semibold text-light">Databases</h3>
+                        </div>
+                        <ul class="space-y-3">
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-primary mr-3"></i>
+                                <span class="text-muted">MySQL</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-primary mr-3"></i>
+                                <span class="text-muted">PostgreSQL</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-primary mr-3"></i>
+                                <span class="text-muted">Database Administration</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="bg-card-bg backdrop-blur-sm border border-border rounded-2xl p-6 card fade-in-up">
+                        <div class="flex items-center mb-4">
+                            <div class="bg-primary/20 p-2 rounded-lg mr-4">
+                                <i class="fas fa-network-wired text-primary text-xl"></i>
+                            </div>
+                            <h3 class="text-xl font-semibold text-light">Networking & Security</h3>
+                        </div>
+                        <ul class="space-y-3">
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-primary mr-3"></i>
+                                <span class="text-muted">Computer Networking</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-primary mr-3"></i>
+                                <span class="text-muted">Endpoint Security</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="bg-card-bg backdrop-blur-sm border border-border rounded-2xl p-6 card fade-in-up">
+                        <div class="flex items-center mb-4">
+                            <div class="bg-primary/20 p-2 rounded-lg mr-4">
+                                <i class="fas fa-tools text-primary text-xl"></i>
+                            </div>
+                            <h3 class="text-xl font-semibold text-light">Tools & Platforms</h3>
+                        </div>
+                        <ul class="space-y-3">
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-primary mr-3"></i>
+                                <span class="text-muted">Git & GitHub</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-primary mr-3"></i>
+                                <span class="text-muted">Microsoft Office</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-primary mr-3"></i>
+                                <span class="text-muted">Render</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-primary mr-3"></i>
+                                <span class="text-muted">AWS (Amazon Web Services)</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-primary mr-3"></i>
+                                <span class="text-muted">Docker (Containerization)</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="bg-card-bg backdrop-blur-sm border border-border rounded-2xl p-6 card fade-in-up">
+                        <div class="flex items-center mb-4">
+                            <div class="bg-primary/20 p-2 rounded-lg mr-4">
+                                <i class="fas fa-desktop text-primary text-xl"></i>
+                            </div>
+                            <h3 class="text-xl font-semibold text-light">Operating Systems</h3>
+                        </div>
+                        <ul class="space-y-3">
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-primary mr-3"></i>
+                                <span class="text-muted">Windows</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-primary mr-3"></i>
+                                <span class="text-muted">Linux</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+<section id="projects" class="py-20 bg-dark">
+    <div class="absolute inset-0">
+        <div class="absolute top-10 left-20 w-80 h-80 rounded-full bg-primary/20 blur-3xl"></div>
+        <div class="absolute bottom-10 right-20 w-72 h-72 rounded-full bg-secondary/20 blur-3xl"></div>
+    </div>
+    <div class="container mx-auto px-6 relative z-10">
+        <h2 class="text-3xl md:text-4xl font-bold text-center mb-16 text-light">Featured Projects</h2>
+        <div class="max-w-6xl mx-auto">
+            <div class="grid md:grid-cols-2 lg:grid-cols-2 gap-8">
+                <div class="bg-card-bg backdrop-blur-sm border border-border rounded-2xl overflow-hidden card fade-in-up">
+                    <div class="h-48 overflow-hidden">
+                        <img src="assets/telemedicine.jpg" alt="Telemedicine Solution Platform showing doctor-patient interface" class="w-full h-full object-cover" loading="lazy">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-3 text-light">Telemedicine Solution Platform</h3>
+                        <p class="text-muted mb-4">A platform connecting patients with healthcare providers remotely for consultations and medical services.</p>
+                        <div class="flex flex-wrap gap-2 mb-5">
+                            <span class="bg-primary/20 text-primary text-xs px-3 py-1 rounded-full">Django</span>
+                            <span class="bg-primary/20 text-primary text-xs px-3 py-1 rounded-full">MySQL</span>
+                            <span class="bg-primary/20 text-primary text-xs px-3 py-1 rounded-full">Bootstrap</span>
+                            <span class="bg-primary/20 text-primary text-xs px-3 py-1 rounded-full">Render</span>
+                        </div>
+                        <div class="flex space-x-4">
+                            <a href="https://telemedicine-solution-platform-ovrr.onrender.com/" class="text-primary hover:text-primary/80 flex items-center">
+                                <i class="fas fa-external-link-alt mr-2 text-sm"></i>
+                                <span>Live Demo</span>
+                            </a>
+                            <a href="https://github.com/PatelFamily21/Telemedicine-Solution-Platform" class="text-primary hover:text-primary/80 flex items-center">
+                                <i class="fab fa-github mr-2 text-sm"></i>
+                                <span>Source Code</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-card-bg backdrop-blur-sm border border-border rounded-2xl overflow-hidden card fade-in-up">
+                    <div class="h-48 overflow-hidden">
+                        <img src="/assets/blog.jpg" alt="Blog Platform showing article listing and editor interface" class="w-full h-full object-cover" loading="lazy">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-3 text-light">Blog Platform</h3>
+                        <p class="text-muted mb-4">A full-featured blogging platform with user authentication, rich text editing, and comment system.</p>
+                        <div class="flex flex-wrap gap-2 mb-5">
+                            <span class="bg-primary/20 text-primary text-xs px-3 py-1 rounded-full">Django</span>
+                            <span class="bg-primary/20 text-primary text-xs px-3 py-1 rounded-full">Bootstrap</span>
+                            <span class="bg-primary/20 text-primary text-xs px-3 py-1 rounded-full">MySQL</span>
+                        </div>
+                        <div class="flex space-x-4">
+                            <a href="https://github.com/PatelFamily21/Blog-Platform" class="text-primary hover:text-primary/80 flex items-center">
+                                <i class="fab fa-github mr-2 text-sm"></i>
+                                <span>Source Code</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-card-bg backdrop-blur-sm border border-border rounded-2xl overflow-hidden card fade-in-up">
+                    <div class="h-48 overflow-hidden">
+                        <img src="/assets/employee_tracking.jpg" alt="Employee Tracking System dashboard showing employee records" class="w-full h-full object-cover" loading="lazy">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-3 text-light">Employee Tracking System</h3>
+                        <p class="text-muted mb-4">A comprehensive system for managing employee records, attendance, and performance metrics.</p>
+                        <div class="flex flex-wrap gap-2 mb-5">
+                            <span class="bg-primary/20 text-primary text-xs px-3 py-1 rounded-full">Django</span>
+                            <span class="bg-primary/20 text-primary text-xs px-3 py-1 rounded-full">Tailwind CSS</span>
+                            <span class="bg-primary/20 text-primary text-xs px-3 py-1 rounded-full">MySQL</span>
+                        </div>
+                        <div class="flex space-x-4">
+                            <a href="https://github.com/PatelFamily21/Employee-Tracking-System" class="text-primary hover:text-primary/80 flex items-center">
+                                <i class="fab fa-github mr-2 text-sm"></i>
+                                <span>Source Code</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-card-bg backdrop-blur-sm border border-border rounded-2xl overflow-hidden card fade-in-up">
+                    <div class="h-48 overflow-hidden">
+                        <img src="/assets/File_Organizer.jpg" alt="File-Organizer Script showing organized Downloads folder" class="w-full h-full object-cover" loading="lazy">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-3 text-light">File-Organizer Script</h3>
+                        <p class="text-muted mb-4">A Python script that automates file organization in the Downloads folder by categorizing files into directories like Images, Documents, and Videos based on file extensions.</p>
+                        <div class="flex flex-wrap gap-2 mb-5">
+                            <span class="bg-primary/20 text-primary text-xs px-3 py-1 rounded-full">Python</span>
+                            <span class="bg-primary/20 text-primary text-xs px-3 py-1 rounded-full">os</span>
+                            <span class="bg-primary/20 text-primary text-xs px-3 py-1 rounded-full">shutil</span>
+                        </div>
+                        <div class="flex space-x-4">
+                            <a href="https://github.com/PatelFamily21/File-Organiser-using-Python" class="text-primary hover:text-primary/80 flex items-center">
+                                <i class="fab fa-github mr-2 text-sm"></i>
+                                <span>Source Code</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="py-20 bg-dark">
+        <div class="absolute inset-0">
+            <div class="absolute top-20 left-20 w-96 h-96 rounded-full bg-primary/20 blur-3xl"></div>
+            <div class="absolute bottom-20 right-20 w-64 h-64 rounded-full bg-secondary/20 blur-3xl"></div>
+        </div>
+        <div class="container mx-auto px-6 relative z-10">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-16 text-light">Professional Experience</h2>
+            <div class="max-w-4xl mx-auto">
+                <div class="bg-card-bg backdrop-blur-sm border border-border rounded-2xl p-8 card fade-in-up">
+                    <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-6">
+                        <h3 class="text-xl font-semibold text-light">ICT Attachee</h3>
+                        <span class="text-muted bg-dark/50 px-3 py-1 rounded-full text-sm">Tana River County Government</span>
+                    </div>
+                    <div class="flex items-center text-muted mb-6">
+                        <i class="fas fa-calendar-alt mr-2"></i>
+                        <span>Duration: 20th May, 2023 - 9th August, 2023</span>
+                    </div>
+                    <div class="text-muted">
+                        <p class="mb-4">Worked with the ICT Department offering comprehensive support services to Hola County Referral Hospital:</p>
+                        <ul class="list-disc pl-5 space-y-2">
+                            <li>Performed computer software and hardware maintenance, repairs, and troubleshooting for hospital systems</li>
+                            <li>Managed network infrastructure including maintenance, troubleshooting, and optimization</li>
+                            <li>Provided technical support and training to hospital staff on various ICT systems</li>
+                            <li>Documented system configurations and created user manuals for hospital applications</li>
+                            <li>Assisted in the implementation of new ICT solutions to improve hospital operations</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-dark">
+        <div class="absolute inset-0">
+            <div class="absolute top-10 right-10 w-80 h-80 rounded-full bg-primary/20 blur-3xl"></div>
+            <div class="absolute bottom-10 left-10 w-96 h-96 rounded-full bg-secondary/20 blur-3xl"></div>
+        </div>
+        <div class="container mx-auto px-6 relative z-10">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-16 text-light">Get In Touch</h2>
+            <div class="max-w-4xl mx-auto">
+                <div class="grid md:grid-cols-2 gap-12">
+                    <div class="bg-card-bg backdrop-blur-sm border border-border rounded-2xl p-8 card fade-in-up">
+                        <h3 class="text-xl font-semibold mb-6 text-light">Contact Information</h3>
+                        <div class="space-y-6">
+                            <div class="flex items-start">
+                                <div class="bg-primary/20 p-3 rounded-full mr-4">
+                                    <i class="fas fa-envelope text-primary"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-medium text-light">Email</h4>
+                                    <a href="mailto:patelhadaisa@gmail.com" class="text-muted hover:text-primary transition duration-300">patelhadaisa@gmail.com</a>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="bg-primary/20 p-3 rounded-full mr-4">
+                                    <i class="fas fa-phone-alt text-primary"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-medium text-light">Phone</h4>
+                                    <a href="tel:+254713802184" class="text-muted hover:text-primary transition duration-300">+254 713 802 184</a>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="bg-primary/20 p-3 rounded-full mr-4">
+                                    <i class="fab fa-github text-primary"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-medium text-light">GitHub</h4>
+                                    <a href="https://github.com/PatelFamily21" target="_blank" class="text-muted hover:text-primary transition duration-300">github.com/PatelFamily21</a>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="bg-primary/20 p-3 rounded-full mr-4">
+                                    <i class="fas fa-map-marker-alt text-primary"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-medium text-light">Location</h4>
+                                    <p class="text-muted">Mombasa, Kenya</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-card-bg backdrop-blur-sm border border-border rounded-2xl p-8 card fade-in-up">
+                        <form action="https://formspree.io/f/meogdplb" method="POST" class="space-y-6">
+                            <!-- Honeypot field for spam protection -->
+                            <div style="display: none;" aria-hidden="true">
+                                <label for="honeypot">Do not fill this field</label>
+                                <input type="text" name="honeypot" id="honeypot">
+                            </div>
+                            
+                            <div>
+                                <label for="name" class="block text-muted mb-2 font-medium">Name</label>
+                                <input type="text" id="name" name="name" class="w-full px-4 py-3 bg-dark/50 border border-border rounded-lg focus:ring-2 focus:ring-primary focus:border-primary outline-none transition duration-300 text-muted">
+                            </div>
+                            <div>
+                                <label for="email" class="block text-muted mb-2 font-medium">Email</label>
+                                <input type="email" id="email" name="email" class="w-full px-4 py-3 bg-dark/50 border border-border rounded-lg focus:ring-2 focus:ring-primary focus:border-primary outline-none transition duration-300 text-muted">
+                            </div>
+                            <div>
+                                <label for="message" class="block text-muted mb-2 font-medium">Message</label>
+                                <textarea id="message" name="message" rows="5" class="w-full px-4 py-3 bg-dark/50 border border-border rounded-lg focus:ring-2 focus:ring-primary focus:border-primary outline-none transition duration-300 text-muted"></textarea>
+                            </div>
+                            <button type="submit" class="bg-primary text-light px-8 py-3 rounded-lg font-medium hover:bg-primary/90 transition duration-300 w-full">Send Message</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark py-12 text-light">
+        <div class="absolute inset-0">
+            <div class="absolute top-10 left-10 w-64 h-64 rounded-full bg-primary/20 blur-3xl"></div>
+            <div class="absolute bottom-10 right-10 w-80 h-80 rounded-full bg-secondary/20 blur-3xl"></div>
+        </div>
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-6 md:mb-0">
+                    <a href="#" class="text-2xl font-bold text-light">Patel Hadaisa</a>
+                    <p class="text-muted mt-2">Information Technology Professional</p>
+                </div>
+                <div class="flex space-x-6">
+                    <a href="https://github.com/PatelFamily21" class="text-muted hover:text-light transition duration-300 text-xl">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/patel-hadaisa-b56510216/" class="text-muted hover:text-light transition duration-300 text-xl">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    
+                </div>
+            </div>
+            <div class="border-t border-border mt-8 pt-8 text-center text-muted">
+                <p>© 2025 Patel Hadaisa. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Mobile menu toggle functionality
+        const mobileMenuButton = document.querySelector('button.md\\:hidden');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const closeMenuButton = document.getElementById('closeMenu');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.style.transform = 'translateX(0)';
+        });
+
+        closeMenuButton.addEventListener('click', () => {
+            mobileMenu.style.transform = 'translateX(100%)';
+        });
+
+        // Scroll progress bar
+        const scrollProgress = document.getElementById('scrollProgress');
+        const updateScrollProgress = () => {
+            const scrollTop = window.scrollY;
+            const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+            const scrollPercent = (scrollTop / docHeight) * 100;
+            scrollProgress.style.width = `${scrollPercent}%`;
+        };
+
+        window.addEventListener('scroll', updateScrollProgress);
+
+        // Back to top button
+        const backToTopButton = document.getElementById('backToTop');
+        const toggleBackToTopButton = () => {
+            if (window.scrollY > 300) {
+                backToTopButton.classList.remove('opacity-0');
+                backToTopButton.classList.add('opacity-100');
+            } else {
+                backToTopButton.classList.remove('opacity-100');
+                backToTopButton.classList.add('opacity-0');
+            }
+        };
+
+        window.addEventListener('scroll', toggleBackToTopButton);
+
+        backToTopButton.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    </script>
+</body>
+</html>
